@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-
+const fs = require("fs");
 
 // the async function is a wrapper for the code that we want to run
 
@@ -17,23 +17,29 @@ const page = await browser.newPage();
 
 await page.goto("https://lets-camp.onrender.com/");
 
-// await page.screenshot({path: 'example.png', fullPage: true});
-// await page.pdf({path: 'example.pdf', format: 'A4'});
-// const html = await page.content();
-// console.log(html);
+await page.screenshot({path: 'example.png', fullPage: true});
+await page.pdf({path: 'example.pdf', format: 'A4'});
+const html = await page.content();
+console.log(html);
 
-//const title = await page.evaluate(() => document.title);
-//console.log(title);
+const title = await page.evaluate(() => document.title);
+console.log(title);
 
-//const text = await page.evaluate(() => document.body.innerText)
-//console.log(text);
+const text = await page.evaluate(() => document.body.innerText)
+console.log(text);
 
-//const link = await page.evaluate(() => Array.from(document.querySelectorAll('a'), (e) => e.href))
-//console.log(link);
-
-
+const link = await page.evaluate(() => Array.from(document.querySelectorAll('a'), (e) => e.href))
+console.log(link);
 
 
+
+// save data to a json file
+fs.watchFile("data.json", function() {
+    fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err) {
+        if (err) throw err;
+        console.log("Saved!");
+    });
+});
 
 
 

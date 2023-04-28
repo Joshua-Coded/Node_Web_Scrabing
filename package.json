@@ -1,0 +1,23 @@
+{
+  "name": "node_web_scrabing",
+  "version": "1.0.0",
+  "description": "Author: Joshua Alana",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshbam-joshwilly/Node_Web_Scrabing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joshbam-joshwilly/Node_Web_Scrabing/issues"
+  },
+  "homepage": "https://github.com/Joshbam-joshwilly/Node_Web_Scrabing#readme",
+  "dependencies": {
+    "puppeteer": "^19.11.1"
+  }
+}
